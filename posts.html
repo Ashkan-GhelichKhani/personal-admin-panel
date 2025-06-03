@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پنل مدیریت</title>
+
+  <!-- Bootstrap 5.3.2 RTL -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="admin-wrapper">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top top-navbar">
+      <div class="container-fluid">
+        <button class="btn btn-outline-light me-2" id="sidebarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a class="navbar-brand me-auto" href="#">رفتن به سایت</a>
+
+        <div class="d-flex align-items-center">
+          <!-- Notification Icon -->
+          <a href="#" class="icon-with-badge text-white">
+            <i class="fas fa-bell fs-5"></i>
+            <span class="badge bg-danger rounded-pill icon-badge">3</span>
+          </a>
+
+          <!-- Message Icon -->
+          <a href="#" class="icon-with-badge text-white">
+            <i class="fas fa-comment fs-5"></i>
+            <span class="badge bg-warning text-dark rounded-pill icon-badge">5</span>
+          </a>
+
+          <!-- Avatar Dropdown -->
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="fas fa-user-circle fs-5"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="./setting.html">تنظیمات</a></li>
+              <li><a class="dropdown-item" href="#">خروج</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <div class="sidebar-header text-center py-4 border-bottom">
+        <img src="img/admin.png" alt="Admin Avatar" class="rounded-circle mb-2" width="80" height="80">
+        <h6 class="text-white mb-0">اشکان قلیچ خانی</h6>
+      </div>      
+      <ul class="nav flex-column p-3">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html"><i class="fas fa-chart-line me-2"></i> داشبورد</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="users.html"><i class="fas fa-users me-2"></i> کاربران</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="media.html"><i class="fas fa-photo-video me-2"></i> رسانه</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="posts.html"><i class="fas fa-newspaper me-2"></i> مطالب</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="categories.html"><i class="fas fa-folder-open me-2"></i> دسته‌بندی</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="tags.html"><i class="fas fa-tags me-2"></i> برچسب</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="comments.html"><i class="fas fa-comments me-2"></i> نظرات</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="skills.html"><i class="fas fa-brain me-2"></i> مهارت</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="resumes.html"><i class="fas fa-id-card me-2"></i> رزومه</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="expertise.html"><i class="fas fa-user-graduate me-2"></i> تخصص‌ها</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="stats.html"><i class="fas fa-star me-2"></i> دستاوردها</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="contacts.html"><i class="fas fa-phone me-2"></i> تماس با من</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="social-medias.html"><i class="fas fa-share-alt me-2"></i> شبکه‌های اجتماعی</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="setting.html"><i class="fas fa-cog me-2"></i> تنظیمات</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#"><i class="fas fa-sign-out-alt me-2"></i> خروج</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content">
+        <div class="container-fluid">
+            <div class="card">
+              <!-- Card Header -->
+              <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <div class="d-flex gap-2">
+                  <a href="create-post.html" class="btn btn-success btn-sm"><i class="fas fa-file-circle-plus me-1"></i> مطلب جدید</a>
+          
+                <select class="form-select form-select-sm w-auto">
+                  <option value="all">همه مطالب</option>
+                  <option value="published">منتشر شده</option>
+                  <option value="draft">پیش‌نویس</option>
+                </select>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-filter me-1"></i> فیلتر</button>
+                </div>
+                
+          
+                <div class="input-group input-group-sm w-auto">
+                  <input type="text" class="form-control" placeholder="جستجو...">
+                  <button class="btn btn-secondary"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+          
+              <!-- Card Body -->
+              <div class="card-body table-responsive">
+                <table class="table table-bordered table-striped table-hover text-center align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>ردیف</th>
+                      <th>عنوان</th>
+                      <th>نویسنده</th>
+                      <th>وضعیت</th>
+                      <th>تاریخ</th>
+                      <th>عملیات</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>مقدمه‌ای بر HTML</td>
+                      <td>اشکان قلیچ‌خانی</td>
+                      <td><span class="badge bg-success">منتشر شده</span></td>
+                      <td>1403/03/01</td>
+                      <td>
+                        <a href="view-post.html" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                        <a href="create-post.html" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>ویژگی‌های بوت استرپ 5</td>
+                      <td>اشکان قلیچ‌خانی</td>
+                      <td><span class="badge bg-primary">پیش نویس</span></td>
+                      <td>1403/02/01</td>
+                      <td>
+                        <a href="view-post.html" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                        <a href="create-post.html" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>معرفی VueJS</td>
+                      <td>اشکان قلیچ‌خانی</td>
+                      <td><span class="badge bg-success">منتشر شده</span></td>
+                      <td>1403/01/01</td>
+                      <td>
+                        <a href="view-post.html" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                        <a href="create-post.html" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>افزونه‌های مهم وردپرس</td>
+                      <td>اشکان قلیچ‌خانی</td>
+                      <td><span class="badge bg-success">منتشر شده</span></td>
+                      <td>1402/12/01</td>
+                      <td>
+                        <a href="view-post.html" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                        <a href="create-post.html" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>چند نکته برای بهبود سئو</td>
+                      <td>اشکان قلیچ‌خانی</td>
+                      <td><span class="badge bg-success">منتشر شده</span></td>
+                      <td>1402/11/01</td>
+                      <td>
+                        <a href="view-post.html" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                        <a href="create-post.html" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          
+              <!-- Card Footer -->
+              <div class="card-footer d-flex justify-content-center">
+                <nav>
+                  <ul class="pagination pagination-sm mb-0">
+                    <li class="page-item"><a class="page-link" href="#">قبلی</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">بعدی</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+  </div>
+
+  <!-- Scripts -->
+   <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Custom Scripts -->
+   <script src="./js/script.js"></script>
+</body>
+</html>

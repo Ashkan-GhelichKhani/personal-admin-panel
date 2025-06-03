@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Vazir';
+  src: url('../fonts/vazir-400.eot');
+  src: url('../fonts/vazir-400.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/vazir-400.woff2') format('woff2'),
+       url('../fonts/vazir-400.woff') format('woff'),
+       url('../fonts/vazir-400.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body, * {
+  font-family: 'Vazir', sans-serif;
+}
+
+
+/* ===== Layout Wrapper ===== */
+.admin-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Top Navbar ===== */
+.top-navbar {
+  z-index: 1030;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  top: 56px;
+  right: 0;
+  width: 220px;
+  height: calc(100% - 56px);
+  background-color: #212529;
+  color: #fff;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  transform: translateX(220px);
+  z-index: 1020;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Sidebar item hover effect */
+.sidebar .nav-link:hover {
+  background-color: var(--bs-primary);
+  color: #fff !important;
+}
+
+/* Active item */
+.sidebar .nav-link.active {
+  background-color: var(--bs-primary);
+  color: #fff !important;
+}
+
+
+/* ===== Main Content ===== */
+.main-content {
+  margin-top: 56px;
+  padding: 1rem;
+  transition: margin-right 0.3s ease;
+}
+
+.main-content.shifted {
+  margin-right: 220px;
+}
+
+@media (max-width: 991.98px) {
+  .main-content.shifted {
+    margin-right: 0;
+  }
+}
+
+/* ===== To-Do Box Custom Styles ===== */
+@media (min-width: 992px) {
+  .todo-table-wrapper {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .todo-box {
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ===== Notification Badge ===== */
+.icon-with-badge {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.icon-badge {
+  position: absolute;
+  top: -5px;
+  left: -10px;
+  font-size: 0.65rem;
+}
